@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://1fejc5alqqq5"]
+
+[ext_resource type="Script" path="res://maps/game_map.gd" id="1_mqm1a"]
+[ext_resource type="PackedScene" uid="uid://k85jlxlq6fre" path="res://player/player.tscn" id="2_6xsgm"]
+[ext_resource type="Script" path="res://maps/ScreenBorder.gd" id="3_f6hp6"]
+[ext_resource type="PackedScene" uid="uid://cmk2qiya1k4fk" path="res://maps/objects/star.tscn" id="4_uyrf0"]
+[ext_resource type="PackedScene" uid="uid://o4i5xy271wgs" path="res://maps/obstacles/wall.tscn" id="5_0i6v0"]
+[ext_resource type="PackedScene" uid="uid://cxkfqwjmvkrx1" path="res://maps/objects/hole.tscn" id="6_poaug"]
+
+[sub_resource type="Curve2D" id="Curve2D_qjib5"]
+bake_interval = 20.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 975, 693, 34, -232, -34, 232, 924, 1071, -34, -170, 34, 170, 785, 1422, 92, -132, -92, 132, 856, 1764, -5.3454, 106.908, 5.3454, -106.908, 527, 1776, -59.7094, 66.6535, 59.7094, -66.6535, 727, 1666, 12.4726, 140.762, -12.4726, -140.762, 638, 1424, -77.5715, 105.186, 77.5715, -105.186, 751, 1126, 76.6173, 30.2906, -76.6173, -30.2906, 671, 851, 219.161, 106.908, -219.161, -106.908, 287, 795, -122.944, 90.8717, 122.944, -90.8717, 230, 179, -71.2719, -171.053, 71.2719, 171.053, 944, 235, 0, 0, 0, 0, 980, 664)
+}
+point_count = 13
+
+[node name="GameMap" type="Node2D"]
+script = ExtResource("1_mqm1a")
+
+[node name="Player" parent="." instance=ExtResource("2_6xsgm")]
+position = Vector2(899, 762)
+
+[node name="ScreenBorder" type="StaticBody2D" parent="."]
+script = ExtResource("3_f6hp6")
+thickness = Vector4(50, 150, 50, 50)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Star" parent="." instance=ExtResource("4_uyrf0")]
+position = Vector2(808, 1636)
+
+[node name="Star3" parent="." instance=ExtResource("4_uyrf0")]
+position = Vector2(860, 1068)
+
+[node name="Star2" parent="." instance=ExtResource("4_uyrf0")]
+position = Vector2(697, 1368)
+
+[node name="Wall" parent="." instance=ExtResource("5_0i6v0")]
+curve = SubResource("Curve2D_qjib5")
+closed = true
+
+[node name="Hole" parent="." instance=ExtResource("6_poaug")]
+position = Vector2(659, 1788)

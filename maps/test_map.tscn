@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3hinuxiwv5no"]
+
+[ext_resource type="PackedScene" uid="uid://cmk2qiya1k4fk" path="res://maps/objects/star.tscn" id="3_f1mw4"]
+[ext_resource type="PackedScene" uid="uid://cxkfqwjmvkrx1" path="res://maps/objects/hole.tscn" id="3_oce85"]
+[ext_resource type="PackedScene" uid="uid://k85jlxlq6fre" path="res://player/player.tscn" id="3_tmiop"]
+[ext_resource type="PackedScene" uid="uid://cf7er1w4ep63r" path="res://maps/objects/wall.tscn" id="4_eb1fj"]
+
+[node name="test_map" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("3_tmiop")]
+z_index = 1
+position = Vector2(286, 1318)
+
+[node name="Hole" parent="." instance=ExtResource("3_oce85")]
+position = Vector2(776, 1091)
+
+[node name="Star" parent="." instance=ExtResource("3_f1mw4")]
+position = Vector2(196, 214)
+
+[node name="Star2" parent="." instance=ExtResource("3_f1mw4")]
+position = Vector2(944, 770)
+
+[node name="Wall" parent="." instance=ExtResource("4_eb1fj")]
+position = Vector2(572, 20)
+scale = Vector2(10.96, 1)
+
+[node name="Wall2" parent="." instance=ExtResource("4_eb1fj")]
+position = Vector2(528, 1920)
+scale = Vector2(10.96, 1)
+
+[node name="Wall4" parent="." instance=ExtResource("4_eb1fj")]
+position = Vector2(-8, 968)
+rotation = 1.57079
+scale = Vector2(15.44, 1)
+
+[node name="Wall5" parent="." instance=ExtResource("4_eb1fj")]
+position = Vector2(1084, 1004)
+rotation = 1.57079
+scale = Vector2(15.44, 1)
+
+[node name="Wall3" parent="." instance=ExtResource("4_eb1fj")]
+position = Vector2(920, 1600)
+rotation = 0.801596
+scale = Vector2(10.96, 1)
+
+[node name="Wall6" parent="." instance=ExtResource("4_eb1fj")]
+position = Vector2(644, 948)
+rotation = -0.834923
+scale = Vector2(3.49206, 1)

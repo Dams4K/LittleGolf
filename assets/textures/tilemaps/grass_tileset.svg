@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="96"
+   height="96"
+   viewBox="0 0 25.399999 25.4"
+   version="1.1"
+   id="svg9993"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="grass_tileset.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview9995"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="true"
+     inkscape:zoom="6.2074635"
+     inkscape:cx="15.867995"
+     inkscape:cy="68.304872"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid10497"
+       originx="0"
+       originy="0"
+       spacingx="8.4666665"
+       spacingy="8.4666665" />
+  </sodipodi:namedview>
+  <defs
+     id="defs9990" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="display:inline;fill:#37c871;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round"
+       d="M 2.4999999e-8,0 -2.4999999e-8,25.399999 H 25.399999 V 0 Z"
+       id="path10565"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="display:inline;fill:none;stroke:#93ac9d;stroke-width:2.11667;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="M 3.7042646,17.991667 3.7041339,8.4666666 C 3.7041065,6.4710388 5.9419047,4.2333333 7.9375325,4.2333333 H 17.4625 c 1.995612,0 4.233333,2.2377209 4.233333,4.2333333 v 9.5250004 c 0,1.995612 -2.237721,4.233333 -4.233333,4.233333 H 7.9375325 c -1.995597,0 -4.2332405,-2.237736 -4.2332679,-4.233333 z"
+       id="path17794"
+       sodipodi:nodetypes="sssssssss" />
+    <path
+       style="display:inline;fill:none;stroke:#ffffff;stroke-width:2.11667;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="M 3.7042646,17.4625 3.7041339,7.9374999 C 3.7041065,5.9418721 5.9419047,3.7041666 7.9375325,3.7041666 H 17.4625 c 1.995612,0 4.233333,2.2377209 4.233333,4.2333333 V 17.4625 c 0,1.995612 -2.237721,4.233333 -4.233333,4.233333 H 7.9375325 c -1.995597,0 -4.2332405,-2.237736 -4.2332679,-4.233333 z"
+       id="path10739"
+       sodipodi:nodetypes="sssssssss" />
+  </g>
+</svg>

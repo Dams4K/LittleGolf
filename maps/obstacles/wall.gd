@@ -1,0 +1,50 @@
+@tool
+extends Path2D
+
+@export var size: float = 50.0:
+	set(v):
+		size = v
+@export var closed: bool = false
+
+@onready var collision_polygon_2d: CollisionPolygon2D = %CollisionPolygon2D
+@onready var polygon_2d: Polygon2D = %Polygon2D
+
+func _ready():
+	generate()
+
+func _process(delta: float) -> void:
+	if Engine.is_editor_hint():
+		generate()
+
+func generate():
+	if curve == null:
+		return
+	
+	var top_points := PackedVector2Array()
+	var bottom_points := PackedVector2Array()
+	
+	var previous_point = curve.sample_baked(0)
+	var points_number = int(curve.get_baked_length() / curve.bake_interval + 2)
+	for i in range(1, points_number):
+		var current_point = curve.sample_baked(min(i * curve.bake_interval, curve.get_baked_length()))
+		var tangent = (previous_point - current_point).normalized()
+		var normal = tangent.orthogonal() * size
+#		draw_line(previous_point - normal / 2, previous_point + normal / 2, Color.RED, 2)
+		
+		top_points.append(previous_point - normal / 2)
+		bottom_points.append(previous_point + normal / 2)
+		previous_point = current_point
+		
+		if i == points_number-1:
+#			draw_line(current_point - normal / 2, current_point + normal / 2, Color.BLUE, 2)
+			
+			top_points.append(current_point - normal / 2)
+			bottom_points.append(current_point + normal / 2)
+	
+	if closed:
+		top_points.append(top_points[0])
+		bottom_points.append(bottom_points[0])
+	bottom_points.reverse()
+	top_points.append_array(bottom_points)
+	collision_polygon_2d.polygon = top_points
+	polygon_2d.polygon = top_points
