@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://b3hgw1khxyyk4"]
+
+[ext_resource type="PackedScene" uid="uid://k85jlxlq6fre" path="res://player/player.tscn" id="1_hg1ha"]
+[ext_resource type="Script" path="res://maps/levels/level_1.gd" id="1_ua5gb"]
+[ext_resource type="PackedScene" uid="uid://cxkfqwjmvkrx1" path="res://maps/objects/hole.tscn" id="2_b2y4t"]
+[ext_resource type="PackedScene" uid="uid://cmk2qiya1k4fk" path="res://maps/objects/star.tscn" id="4_d8o7s"]
+[ext_resource type="PackedScene" uid="uid://dxtup856ym46o" path="res://maps/hud.tscn" id="5_mfxcm"]
+[ext_resource type="PackedScene" uid="uid://b27bd7bumic4f" path="res://maps/objects/hole_finder.tscn" id="6_03r11"]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_ua5gb")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("5_mfxcm")]
+
+[node name="Player" parent="." instance=ExtResource("1_hg1ha")]
+position = Vector2(0, 1536)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+offset = Vector2(0, -500)
+position_smoothing_enabled = true
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="Hole" parent="." instance=ExtResource("2_b2y4t")]
+position = Vector2(0, 100)
+
+[node name="Star1" parent="." instance=ExtResource("4_d8o7s")]
+position = Vector2(0, 356)
+
+[node name="Star2" parent="." instance=ExtResource("4_d8o7s")]
+position = Vector2(0, 612)
+
+[node name="Star3" parent="." instance=ExtResource("4_d8o7s")]
+position = Vector2(0, 868)
+
+[node name="HoleFinder" parent="." node_paths=PackedStringArray("camera2d", "hole") instance=ExtResource("6_03r11")]
+camera2d = NodePath("../Player/Camera2D")
+hole = NodePath("../Hole")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxtup856ym46o"]
+
+[ext_resource type="Theme" uid="uid://ctsdks3y5olcq" path="res://assets/themes/hud_theme.tres" id="1_1jw2d"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tdjji"]
+font_size = 96
+font_color = Color(0, 0, 0, 1)
+
+[node name="HUD" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_1jw2d")
+
+[node name="LevelLabel" type="Label" parent="."]
+layout_mode = 2
+text = "Level 1"
+label_settings = SubResource("LabelSettings_tdjji")
+horizontal_alignment = 1
+vertical_alignment = 1

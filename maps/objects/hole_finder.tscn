@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b27bd7bumic4f"]
+
+[ext_resource type="Script" path="res://maps/objects/hole_finder.gd" id="1_lo0o5"]
+[ext_resource type="Texture2D" uid="uid://dhywglf6lyu38" path="res://assets/textures/hole/hole.svg" id="2_hv01m"]
+
+[node name="HoleFinder" type="Node2D"]
+script = ExtResource("1_lo0o5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_hv01m")
