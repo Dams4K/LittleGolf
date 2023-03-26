@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cmk2qiya1k4fk"]
 
-[ext_resource type="Texture2D" uid="uid://c6mltcalenyhr" path="res://assets/textures/objects/star.svg" id="1_nyo7r"]
 [ext_resource type="Script" path="res://maps/objects/star.gd" id="1_uxfbx"]
+[ext_resource type="Texture2D" uid="uid://c6mltcalenyhr" path="res://assets/textures/objects/star.svg" id="2_pjwgl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vc2ug"]
 radius = 32.0
@@ -182,7 +182,7 @@ _data = {
 script = ExtResource("1_uxfbx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_nyo7r")
+texture = ExtResource("2_pjwgl")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -194,4 +194,4 @@ libraries = {
 "": SubResource("AnimationLibrary_j4emi")
 }
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered" flags=6]

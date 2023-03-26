@@ -1,27 +1,42 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3hgw1khxyyk4"]
+[gd_scene load_steps=9 format=3 uid="uid://b5nfk27ml6faa"]
 
 [ext_resource type="PackedScene" uid="uid://k85jlxlq6fre" path="res://player/player.tscn" id="1_hg1ha"]
 [ext_resource type="Script" path="res://maps/levels/level_1.gd" id="1_ua5gb"]
 [ext_resource type="PackedScene" uid="uid://cxkfqwjmvkrx1" path="res://maps/objects/hole.tscn" id="2_b2y4t"]
+[ext_resource type="Theme" uid="uid://ctsdks3y5olcq" path="res://assets/themes/hud_theme.tres" id="3_6ak00"]
 [ext_resource type="PackedScene" uid="uid://cmk2qiya1k4fk" path="res://maps/objects/star.tscn" id="4_d8o7s"]
-[ext_resource type="PackedScene" uid="uid://dxtup856ym46o" path="res://maps/hud.tscn" id="5_mfxcm"]
-[ext_resource type="PackedScene" uid="uid://b27bd7bumic4f" path="res://maps/objects/hole_finder.tscn" id="6_03r11"]
+[ext_resource type="PackedScene" uid="uid://b1g5uw8wt121s" path="res://player/player_camera.tscn" id="4_ds5bx"]
+[ext_resource type="PackedScene" uid="uid://40f8c5vel5ej" path="res://menus/hud.tscn" id="5_mfxcm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_w3irp"]
+font_size = 64
+font_color = Color(0, 0, 0, 1)
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_ua5gb")
 
+[node name="Label" type="Label" parent="."]
+offset_left = 42424.0
+offset_right = 42876.0
+offset_bottom = 158.0
+theme = ExtResource("3_6ak00")
+text = "Wrong direction
+LOL"
+label_settings = SubResource("LabelSettings_w3irp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="HUD" parent="CanvasLayer" instance=ExtResource("5_mfxcm")]
+[node name="HUD" parent="CanvasLayer" node_paths=PackedStringArray("star1", "star2", "star3") instance=ExtResource("5_mfxcm")]
+star1 = NodePath("../../Star1")
+star2 = NodePath("../../Star2")
+star3 = NodePath("../../Star3")
 
 [node name="Player" parent="." instance=ExtResource("1_hg1ha")]
-position = Vector2(0, 1536)
+position = Vector2(0, 1280)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-offset = Vector2(0, -500)
-position_smoothing_enabled = true
-editor_draw_limits = true
-editor_draw_drag_margin = true
+[node name="Camera2D" parent="Player" instance=ExtResource("4_ds5bx")]
 
 [node name="Hole" parent="." instance=ExtResource("2_b2y4t")]
 position = Vector2(0, 100)
@@ -34,7 +49,3 @@ position = Vector2(0, 612)
 
 [node name="Star3" parent="." instance=ExtResource("4_d8o7s")]
 position = Vector2(0, 868)
-
-[node name="HoleFinder" parent="." node_paths=PackedStringArray("camera2d", "hole") instance=ExtResource("6_03r11")]
-camera2d = NodePath("../Player/Camera2D")
-hole = NodePath("../Hole")
