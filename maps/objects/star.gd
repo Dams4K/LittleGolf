@@ -11,8 +11,10 @@ signal collected
 var move_tween = null
 
 func _ready() -> void:
+	randomize()
 	sprite_2d.position = Vector2.ZERO
 	animation_player.play("moving")
+	animation_player.seek(randf(), true)
 
 func disapear():
 	animation_player.play("collected")

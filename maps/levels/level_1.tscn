@@ -33,6 +33,7 @@ star3 = NodePath("../Star3")
 
 [node name="Player" parent="." instance=ExtResource("1_hg1ha")]
 position = Vector2(0, 1124)
+available_moves = 2
 
 [node name="Camera2D" parent="Player" instance=ExtResource("4_ds5bx")]
 
