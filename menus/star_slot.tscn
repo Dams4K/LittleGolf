@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bb2o1cd8y32qd"]
 
 [ext_resource type="Script" path="res://menus/star_slot.gd" id="1_xy8oo"]
-[ext_resource type="Texture2D" uid="uid://bpodps6b3lqp7" path="res://assets/textures/objects/star_slot_hd.svg" id="2_hj308"]
-[ext_resource type="Texture2D" uid="uid://c6mltcalenyhr" path="res://assets/textures/objects/star_hd.svg" id="3_jg347"]
+[ext_resource type="Texture2D" uid="uid://bpodps6b3lqp7" path="res://assets/textures/objects/star_slot.svg" id="2_hj308"]
+[ext_resource type="Texture2D" uid="uid://c6mltcalenyhr" path="res://assets/textures/objects/star.svg" id="3_jg347"]
 
 [node name="StarSlot" type="Control"]
 custom_minimum_size = Vector2(128, 128)

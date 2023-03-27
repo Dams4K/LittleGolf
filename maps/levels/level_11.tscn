@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://yhlwa4esva1k"]
+
+[ext_resource type="PackedScene" uid="uid://k85jlxlq6fre" path="res://player/player.tscn" id="1_ajs6g"]
+[ext_resource type="PackedScene" uid="uid://b1g5uw8wt121s" path="res://player/player_camera.tscn" id="2_7rt3n"]
+[ext_resource type="PackedScene" uid="uid://40f8c5vel5ej" path="res://menus/hud_layer.tscn" id="3_vdlwj"]
+[ext_resource type="PackedScene" uid="uid://cxkfqwjmvkrx1" path="res://maps/objects/hole.tscn" id="4_rgu82"]
+[ext_resource type="PackedScene" uid="uid://o4i5xy271wgs" path="res://maps/obstacles/wall.tscn" id="5_07u7w"]
+
+[sub_resource type="Curve2D" id="Curve2D_mhtsm"]
+bake_interval = 25.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 550, -442, 226.632, 55.4893, -226.632, -55.4893, 225, 20, 370.524, 11.3137, -370.524, -11.3137, -417, -906, 3.63908, -300.112, -3.63908, 300.112, -745, -23, -480.833, -50.9117, 480.833, 50.9117, -344, 991, 0, 0, 0, 0, 741, -360)
+}
+point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_b0w5d"]
+bake_interval = 25.0
+_data = {
+"points": PackedVector2Array(31.7457, 253.046, -31.7457, -253.046, -8, 80, 207.674, 16.6531, -207.674, -16.6531, -437, -792, -36.7696, -551.543, 36.7696, 551.543, -646, -24, -316.048, -101.665, 316.048, 101.665, -370, 890, 0, 0, 0, 0, 550, -430)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_3xqdk"]
+bake_interval = 25.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 781, -1147, -76.6528, 67.6229, 76.6528, -67.6229, 1125, -1529, -266, -68, 266, 68, 1573, -1657, 0, 0, 0, 0, 1898, -1297)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_rv0ot"]
+bake_interval = 50.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1063, -1174, -235.244, 168.031, 235.244, -168.031, 1273, -1636, 0, 0, 0, 0, 1673, -1449)
+}
+point_count = 3
+
+[node name="Level11" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_ajs6g")]
+position = Vector2(83, 3)
+
+[node name="Camera2D" parent="Player" instance=ExtResource("2_7rt3n")]
+
+[node name="HUDLayer" parent="." instance=ExtResource("3_vdlwj")]
+
+[node name="Hole" parent="." instance=ExtResource("4_rgu82")]
+position = Vector2(1855, -1218)
+
+[node name="Wall" parent="." instance=ExtResource("5_07u7w")]
+curve = SubResource("Curve2D_mhtsm")
+size = 25.0
+
+[node name="Wall2" parent="." instance=ExtResource("5_07u7w")]
+curve = SubResource("Curve2D_b0w5d")
+size = 25.0
+
+[node name="Wall3" parent="." instance=ExtResource("5_07u7w")]
+curve = SubResource("Curve2D_3xqdk")
+
+[node name="Wall4" parent="." instance=ExtResource("5_07u7w")]
+position = Vector2(52, 271)
+curve = SubResource("Curve2D_rv0ot")

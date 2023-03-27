@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://b02nayh434dl"]
+
+[ext_resource type="Theme" uid="uid://ctsdks3y5olcq" path="res://assets/themes/hud_theme.tres" id="1_bsdgs"]
+[ext_resource type="Texture2D" uid="uid://8nvh10tw4jhi" path="res://assets/textures/buttons/next_level.svg" id="2_5agwj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x04bi"]
+font_size = 96
+font_color = Color(0, 0, 0, 1)
+
+[node name="LevelEndMenu" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_bsdgs")
+alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Level complete !"
+label_settings = SubResource("LabelSettings_x04bi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_5agwj")

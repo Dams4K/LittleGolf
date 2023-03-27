@@ -1,3 +1,4 @@
+@tool
 extends CharacterBody2D
 class_name Ball
 
@@ -9,14 +10,18 @@ const FALL_DURATION: float = 0.25
 		direction = v
 		velocity = v
 
+func _ready() -> void:
+	scale = Vector2.ONE
+
 func _physics_process(delta: float) -> void:
-	velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
-	var collision = move_and_collide(velocity)
-	if collision != null:
-		direction = velocity.bounce(collision.get_normal())
+	if not Engine.is_editor_hint():
+		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
+		var collision = move_and_collide(velocity)
+		if collision != null:
+			direction = velocity.bounce(collision.get_normal())
 
 func fall(hole_center: Vector2) -> void:
-	print("fall")
+	scale = Vector2.ONE
 	velocity = Vector2.ZERO
 	var tween = get_tree().create_tween()
 	tween.parallel().tween_property(self, "scale", Vector2.ONE * 0.75, FALL_DURATION).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)

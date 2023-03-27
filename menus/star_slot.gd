@@ -9,6 +9,7 @@ class_name StarSlot
 		if collected:
 			collect_animation()
 
+@onready var slot_texture: TextureRect = $SlotTexture
 @onready var star_texture: TextureRect = $StarTexture
 
 func _ready() -> void:
@@ -18,4 +19,5 @@ func _ready() -> void:
 func collect_animation():
 	star_texture.visible = true
 	var tween = create_tween()
+	tween.finished.connect(func(): slot_texture.visible = false)
 	tween.tween_property(star_texture, "scale", Vector2.ONE, 0.6).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)

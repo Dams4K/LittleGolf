@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5nfk27ml6faa"]
+[gd_scene load_steps=9 format=3 uid="uid://bokjpt3achw8a"]
 
 [ext_resource type="PackedScene" uid="uid://k85jlxlq6fre" path="res://player/player.tscn" id="1_hg1ha"]
 [ext_resource type="Script" path="res://maps/levels/level_1.gd" id="1_ua5gb"]
@@ -6,7 +6,7 @@
 [ext_resource type="Theme" uid="uid://ctsdks3y5olcq" path="res://assets/themes/hud_theme.tres" id="3_6ak00"]
 [ext_resource type="PackedScene" uid="uid://cmk2qiya1k4fk" path="res://maps/objects/star.tscn" id="4_d8o7s"]
 [ext_resource type="PackedScene" uid="uid://b1g5uw8wt121s" path="res://player/player_camera.tscn" id="4_ds5bx"]
-[ext_resource type="PackedScene" uid="uid://40f8c5vel5ej" path="res://menus/hud.tscn" id="5_mfxcm"]
+[ext_resource type="PackedScene" uid="uid://40f8c5vel5ej" path="res://menus/hud_layer.tscn" id="5_mfxcm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_w3irp"]
 font_size = 64
@@ -26,15 +26,13 @@ label_settings = SubResource("LabelSettings_w3irp")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="HUD" parent="CanvasLayer" node_paths=PackedStringArray("star1", "star2", "star3") instance=ExtResource("5_mfxcm")]
-star1 = NodePath("../../Star1")
-star2 = NodePath("../../Star2")
-star3 = NodePath("../../Star3")
+[node name="HUD" parent="." node_paths=PackedStringArray("star1", "star2", "star3") instance=ExtResource("5_mfxcm")]
+star1 = NodePath("../Star1")
+star2 = NodePath("../Star2")
+star3 = NodePath("../Star3")
 
 [node name="Player" parent="." instance=ExtResource("1_hg1ha")]
-position = Vector2(0, 1280)
+position = Vector2(0, 1124)
 
 [node name="Camera2D" parent="Player" instance=ExtResource("4_ds5bx")]
 

@@ -1,4 +1,4 @@
-extends VBoxContainer
+extends CanvasLayer
 
 @export var star_slot: PackedScene
 
@@ -8,10 +8,12 @@ extends VBoxContainer
 
 
 @onready var stars: Array[Star] = [star1, star2, star3]
-@onready var stars_h_box_container: HBoxContainer = $StarsHBoxContainer
+@onready var stars_h_box_container: HBoxContainer = $HUD/StarsHBoxContainer
 
 func _ready() -> void:
 	for star in stars:
+		if star == null:
+			continue
 		var new_star_slot = star_slot.instantiate()
 		new_star_slot.collected = false
 

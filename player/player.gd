@@ -14,6 +14,7 @@ func _input(event: InputEvent) -> void:
 			start_drag_pos = event.position
 		else:
 			direction = -(event.position - start_drag_pos) * SPEED_MULTIPLICATION
+			print("+1 move")
 	elif event is InputEventScreenDrag:
 		# show dragging line
 		pass

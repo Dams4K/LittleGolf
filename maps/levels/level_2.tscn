@@ -1,11 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://1bkaka01c5ro"]
+[gd_scene load_steps=8 format=3 uid="uid://bhfyo1qb5iil4"]
 
 [ext_resource type="PackedScene" uid="uid://cxkfqwjmvkrx1" path="res://maps/objects/hole.tscn" id="1_l182k"]
 [ext_resource type="PackedScene" uid="uid://k85jlxlq6fre" path="res://player/player.tscn" id="2_o4foa"]
 [ext_resource type="PackedScene" uid="uid://o4i5xy271wgs" path="res://maps/obstacles/wall.tscn" id="3_43pf1"]
 [ext_resource type="PackedScene" uid="uid://b1g5uw8wt121s" path="res://player/player_camera.tscn" id="3_63o2w"]
 [ext_resource type="PackedScene" uid="uid://cmk2qiya1k4fk" path="res://maps/objects/star.tscn" id="4_73got"]
-[ext_resource type="PackedScene" uid="uid://40f8c5vel5ej" path="res://menus/hud.tscn" id="5_0h8o4"]
+[ext_resource type="PackedScene" uid="uid://40f8c5vel5ej" path="res://menus/hud_layer.tscn" id="5_0h8o4"]
 
 [sub_resource type="Curve2D" id="Curve2D_l27sw"]
 bake_interval = 75.0
@@ -37,14 +37,7 @@ position = Vector2(640, 0)
 [node name="Star3" parent="." instance=ExtResource("4_73got")]
 position = Vector2(-640, 0)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="HUD" parent="CanvasLayer" node_paths=PackedStringArray("star1", "star2", "star3") instance=ExtResource("5_0h8o4")]
-star1 = NodePath("../../Star1")
-star2 = NodePath("../../Star2")
-star3 = NodePath("../../Star3")
-
-[node name="LevelLabel" parent="CanvasLayer/HUD" index="0"]
-text = "Level 2"
-
-[editable path="CanvasLayer/HUD"]
+[node name="HUD" parent="." node_paths=PackedStringArray("star1", "star2", "star3") instance=ExtResource("5_0h8o4")]
+star1 = NodePath("../Star1")
+star2 = NodePath("../Star2")
+star3 = NodePath("../Star3")
