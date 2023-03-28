@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ecjxopx6tiqe"]
+
+[ext_resource type="Script" path="res://maps/obstacles/rotating_wall.gd" id="1_4csnv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1b077"]
+radius = 30.0
+height = 350.0
+
+[node name="RotatingWall" type="AnimatableBody2D"]
+script = ExtResource("1_4csnv")
+color = Color(0.592157, 0.419608, 0.309804, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.576471, 0.423529, 0.376471, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_1b077")
