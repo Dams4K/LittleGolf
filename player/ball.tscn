@@ -11,8 +11,8 @@ velocity = Vector2(0, 5000)
 script = ExtResource("1_ke22l")
 direction = Vector2(0, 5000)
 
-[node name="Icon" type="Sprite2D" parent="."]
-texture = ExtResource("1_j00hb")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_koqer")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("1_j00hb")
