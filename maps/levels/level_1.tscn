@@ -27,6 +27,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HUD" parent="." node_paths=PackedStringArray("star1", "star2", "star3") instance=ExtResource("5_mfxcm")]
+level_name = "Level 1"
 star1 = NodePath("../Star1")
 star2 = NodePath("../Star2")
 star3 = NodePath("../Star3")

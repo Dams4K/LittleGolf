@@ -38,6 +38,7 @@ position = Vector2(640, 0)
 position = Vector2(-640, 0)
 
 [node name="HUD" parent="." node_paths=PackedStringArray("star1", "star2", "star3") instance=ExtResource("5_0h8o4")]
+level_name = "Level 2"
 star1 = NodePath("../Star1")
 star2 = NodePath("../Star2")
 star3 = NodePath("../Star3")

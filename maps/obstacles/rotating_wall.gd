@@ -1,3 +1,4 @@
+#@tool
 extends AnimatableBody2D
 
 @export var height: float = 250.0
@@ -11,17 +12,13 @@ extends AnimatableBody2D
 @onready var polygon_2d: Polygon2D = $Polygon2D
 
 func _ready() -> void:
-	rotation_degrees = initial_rotation_degrees
+#	rotation_degrees = initial_rotation_degrees
 	
-	collision_shape_2d.shape.height = height
-	collision_shape_2d.shape.radius = radius
-	queue_redraw()
-	print(height)
-	print(radius)
-	collision_shape_2d.shape.height = height
-	collision_shape_2d.shape.radius = radius
-	print(collision_shape_2d.shape.height)
-	print(collision_shape_2d.shape.radius)
+	var shape = CapsuleShape2D.new()
+	
+	shape.height = height
+	shape.radius = radius
+	collision_shape_2d.shape = shape
 
 func _process(delta: float) -> void:
 	rotation_degrees = fmod(rotation_degrees + rotation_speed * delta, 360)

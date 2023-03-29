@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1gdc6hv0we1p"]
+[gd_scene load_steps=6 format=3 uid="uid://d1gdc6hv0we1p"]
 
 [ext_resource type="PackedScene" uid="uid://k85jlxlq6fre" path="res://player/player.tscn" id="1_8mvf0"]
 [ext_resource type="PackedScene" uid="uid://cmk2qiya1k4fk" path="res://maps/objects/star.tscn" id="2_f0axb"]
 [ext_resource type="PackedScene" uid="uid://b1g5uw8wt121s" path="res://player/player_camera.tscn" id="2_xr02p"]
-[ext_resource type="PackedScene" uid="uid://cxkfqwjmvkrx1" path="res://maps/objects/hole.tscn" id="3_3cc6a"]
 [ext_resource type="PackedScene" uid="uid://40f8c5vel5ej" path="res://menus/hud_layer.tscn" id="4_hplpq"]
 [ext_resource type="PackedScene" uid="uid://ecjxopx6tiqe" path="res://maps/obstacles/rotating_wall.tscn" id="5_ld105"]
 
@@ -13,12 +12,8 @@
 
 [node name="Player" parent="." instance=ExtResource("1_8mvf0")]
 position = Vector2(0, 896)
-available_moves = 2
 
 [node name="Camera2D" parent="Player" instance=ExtResource("2_xr02p")]
-
-[node name="Hole" parent="." instance=ExtResource("3_3cc6a")]
-position = Vector2(0, -256)
 
 [node name="HUDLayer" parent="." node_paths=PackedStringArray("star1", "star2", "star3") instance=ExtResource("4_hplpq")]
 level_name = "Level 3"
@@ -48,8 +43,10 @@ radius = 20.0
 
 [node name="Star1" parent="RotatingWall3" instance=ExtResource("2_f0axb")]
 position = Vector2(192, 0)
+scale = Vector2(1, 1)
 
 [node name="RotatingWall4" parent="." instance=ExtResource("5_ld105")]
 position = Vector2(192, 640)
 height = 350.0
 radius = 20.0
+rotation_speed = -50.0
